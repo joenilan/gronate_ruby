@@ -1,11 +1,16 @@
 Info:
 Gronate (community project for Groestlcoin)
+
 deployment info coming soon.
 
+
 Ruby 2.5.0
+
 Rails 5.1.4
 
+
 ***
+
 
 ## Requirements:
 * Linux or Windows Linux Subsystem
