@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: gronate_development
+  username: postgres
+  password: joe
+  host: localhost
+
+test:
+  <<: *default
+  database: gronate_test
+  username: postgres
+  password: joe
+  host: localhost
+#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
+#
+production:
+  <<: *default
+  database: gronate_production
+  username: gronate
+  password: <%= ENV['GRONATE_DATABASE_PASSWORD'] %>

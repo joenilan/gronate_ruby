@@ -1,0 +1,22 @@
+<h3>ALL USERS (ADMIN ONLY)</h3>
+<div class="col-md-4">
+	User	
+</div>
+<div class="col-md-4">
+	Url
+</div>
+<div class="col-md-4">
+	Action
+</div>
+
+<% @users.each do |user| %>
+<div class="col-md-4">
+	<%= user.email %>
+</div>
+<div class="col-md-4">
+	<%= link_to @user_path, user %>
+</div>
+<div class="col-md-4">
+	Ban | Delete | Role
+</div>
+<% end %>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gronate</title>
+	<%= csrf_meta_tags %>
+	<%= stylesheet_link_tag    'application', media: 'all', :debug => false %>
+	<%= javascript_include_tag 'application', :debug => false %>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="Gronate | Show your support for your favorite streamers!">
+	<meta name="keywords" content="twitch,stream,streaming,streamlabs,donation,donations,tips,bits,notifications,otherobnoxiouskeywords">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
+  </head>
+
+  <body>
+  	<div class="container-fluid toppad">
+	  	<%= render 'layouts/nav' %>
+	    <%= yield %>	
+  	</div>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+
+<% if current_user == @user && user_signed_in? %>
+	<div class="jumbotron">
+		<h2>Your Profile Preview</h2>
+	</div>
+	<div class="col-md-9">
+		Your Gronation URL:
+
+		<div class="form-control">
+
+			<%= link_to 'http://gronate.com' + user_path, @user %>
+		</div>
+		
+
+	</div>
+	<div class="col-md-3">
+		<div class="form-control"></div>
+	</div>
+	<div class="col-md-12">
+	<hr>
+
+	</div>
+	<div class="col-md-9">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="<%= @user.email %>" class="form-control" readonly>
+
+    <!-- Specify a Donate button. -->
+    <input type="hidden" name="cmd" value="_donations">
+
+    <!-- Specify details about the contribution -->
+	Your Twitch Username:
+	<% if user_signed_in? %>
+			<div class="">
+			<input type="" name="item_name" value="<%= current_user.email %>" class="form-control">
+			</div>
+		<% else %>
+			<div>
+	    <input type="" name="item_name" value="Enter YOUR twitch Username (optional)" class="form-control">
+			</div>
+		<% end %>
+	Tip Message:
+    <input type="" name="item_number" value="Short message to streamer (optional)" class="form-control">
+    Amount:
+    <input type="" name="amount" value="1.00" class="form-control">
+    <input type="" name="currency_code" value="USD" class="form-control">
+	<!-- <input name="notify_url" value="http://localhost:3000/status" type="">-->
+    <!-- Display the payment button. -->
+    <input type="image" name="submit"
+    src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+    alt="Donate" disabled="">
+    <img alt="" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+</form>
+	</div>
+	<div class="col-md-3">
+		<div>
+			
+			<div>
+				Barcode:
+				<div class="form-control">
+					<%= @user.barcode %>
+				</div>
+				GRS Address:
+				<div class="form-control">
+					<%= @user.grsaddress %>
+				</div>
+			</div>
+
+		</div>
+	</div>
+		
+	<% else %>
+		<div class="jumbotron">
+		<h2>Tip <%= link_to @user.email, @user, class: 'caps' %> with Groestlcoin!</h2>
+	</div>
+	<div class="col-md-9">
+		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="<%= @user.email %>" class="form-control" readonly>
+
+    <!-- Specify a Donate button. -->
+    <input type="hidden" name="cmd" value="_donations">
+
+    <!-- Specify details about the contribution -->
+	Your Twitch Username:
+	<% if user_signed_in? %>
+			<div class="">
+			<input type="" name="item_name" value="<%= current_user.email %>" class="form-control">
+			</div>
+		<% else %>
+			<div>
+	    <input type="" name="item_name" value="Enter YOUR twitch Username (optional)" class="form-control">
+			</div>
+		<% end %>
+	Tip Message:
+    <input type="" name="item_number" value="Short message to streamer (optional)" class="form-control">
+    Amount:
+    <input type="" name="amount" value="1.00" class="form-control">
+    <input type="" name="currency_code" value="USD" class="form-control">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit"
+    src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+    alt="Donate">
+    <img alt="" width="1" height="1"
+    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+</form>
+	</div>
+	<div class="col-md-3">
+		<div class="form-control">
+			Words
+		</div>
+	</div>
+	<% end %>
+	<%# @streamlabs_response.read_body %>
+
+	
+
+	</div>
