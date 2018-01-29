@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/Sailias/cryptocoin_payable
-  revision: 551c4bd6e0905c018f0647f9f0e704e09dbdf531
+  remote: https://github.com/joenilan/cryptocoin_payable
+  revision: 7fe6e255f51a29f1d519eb32a306ac00fe5ff667
   branch: master
   specs:
     cryptocoin_payable (1.0.0)

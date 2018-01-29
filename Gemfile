@@ -26,7 +26,7 @@ gem 'omniauth-streamlabs'
 gem 'paypal-sdk-rest'
 
 #Features
-gem 'cryptocoin_payable', git: 'https://github.com/Sailias/cryptocoin_payable', branch: 'master'
+gem 'cryptocoin_payable', git: 'https://github.com/joenilan/cryptocoin_payable', branch: 'master'
 gem 'friendly_id', '~> 5.1.0'
 
 
