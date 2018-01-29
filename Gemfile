@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#Base
 gem 'rails', '~> 5.1.4'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -16,11 +17,18 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'httparty'
+
+#Auth
 gem 'devise'
-gem 'friendly_id', '~> 5.1.0'
 gem 'omniauth'
 gem 'omniauth-twitch'
 gem 'omniauth-streamlabs'
+gem 'paypal-sdk-rest'
+
+#Features
+gem 'cryptocoin_payable', git: 'https://github.com/Sailias/cryptocoin_payable', branch: 'master'
+gem 'friendly_id', '~> 5.1.0'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
