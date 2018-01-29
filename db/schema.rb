@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126062344) do
+ActiveRecord::Schema.define(version: 20180129173012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coin_payment_transactions", force: :cascade do |t|
+    t.decimal "estimated_value", precision: 24
+    t.string "transaction_hash"
+    t.string "block_hash"
+    t.datetime "block_time"
+    t.datetime "estimated_time"
+    t.integer "coin_payment_id"
+    t.decimal "coin_conversion", precision: 24
+    t.integer "confirmations", default: 0
+    t.index ["coin_payment_id"], name: "index_coin_payment_transactions_on_coin_payment_id"
+  end
+
+  create_table "coin_payments", force: :cascade do |t|
+    t.string "payable_type"
+    t.integer "coin_type"
+    t.integer "payable_id"
+    t.string "currency"
+    t.string "reason"
+    t.bigint "price"
+    t.decimal "coin_amount_due", precision: 24, default: "0"
+    t.string "address"
+    t.string "state", default: "pending"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal "coin_conversion", precision: 24
+    t.index ["payable_type", "payable_id"], name: "index_coin_payments_on_payable_type_and_payable_id"
+  end
+
+  create_table "currency_conversions", force: :cascade do |t|
+    t.integer "currency"
+    t.decimal "price", precision: 24
+    t.integer "coin_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
