@@ -1,6 +1,4 @@
-Info:
-
-Gronate (community project for Groestlcoin)
+# Gronate (community project for Groestlcoin)
 
 deployment info coming soon.
 
