@@ -1,4 +1,5 @@
 Info:
+
 Gronate (community project for Groestlcoin)
 
 deployment info coming soon.
@@ -27,13 +28,17 @@ Rails 5.1.4
 ## Installation
 
 > $ bundle install
+
 > $ bundle update
+
 > $ rake db:setup 
+
 > $ rake db:migrate
 
 ## Starting the Server
 
 > rails s puma
+
 location: http://localhost:3000
 
 ## Database
@@ -49,4 +54,5 @@ then run
 ## Updating Gems
 
 Run
+
 > bundle update
