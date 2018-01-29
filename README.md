@@ -24,12 +24,29 @@ Rails 5.1.4
 
 ***
 
+## Installation
+
+> $ bundle install
+> $ bundle update
+> $ rake db:setup 
+> $ rake db:migrate
+
+## Starting the Server
+
+> rails s puma
+location: http://localhost:3000
+
 ## Database
 
 run
 
-> rake db:setup 
+> $ rake db:setup 
 
 then run
 
-> rake db:migrate
+> $ rake db:migrate
+
+## Updating Gems
+
+Run
+> bundle update
