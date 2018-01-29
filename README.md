@@ -8,9 +8,6 @@ Ruby 2.5.0
 Rails 5.1.4
 
 
-***
-
-
 ## Requirements:
 * Linux or Windows Linux Subsystem
 * Postgresql
@@ -21,7 +18,6 @@ Rails 5.1.4
 ### Windows Installation & Setup:
 * https://gorails.com/setup/windows/10
 
-***
 
 ## Installation
 
